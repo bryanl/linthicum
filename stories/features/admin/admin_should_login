@@ -1,0 +1,22 @@
+Story: admin should login
+
+  As a blog admin
+  I should have to log in
+  So that I can manage my blog
+
+  Scenario: accessing administration section without logging in
+    Given a user with login 'test' and password 'test'
+    When I visit /admin
+    Then I should be redirected to /admin/login    
+
+  Scenario: logging in with invalid credentials
+    Given no users
+    When I visit /admin/login
+    And I log in with login 'foo' and password 'bar'
+    Then the page should have text "Invalid Login"
+
+  Scenario: logging in with valid credentials
+		Given a user with login 'test' and password 'test'
+		When I log in with login 'test' and password 'test'
+		And I visit /admin
+		Then I should not be redirected

@@ -1,0 +1,16 @@
+Story: articles should be accessible
+
+  As a web site viewer
+  I should be able to load an article or a group of articles
+  So that I see their content
+
+	Scenario: articles should generate a default slug
+	  Given a test article titled "My Blog" created on June 15, 2008
+    When I visit /2008/06/15/my-blog
+    Then the page should have text "test article"
+
+  Scenario: articles should show up on home page
+    Given a test article titled "My Blog" created on June 15, 2008
+    And a test article titled "Another Post" created on June 18, 2008
+    When I visit /
+    Then the page should have 2 articles

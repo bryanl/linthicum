@@ -1,0 +1,26 @@
+Story: admin should post
+
+  As a blog admin
+  I should be able to create posts
+  So that I can share new content
+
+	Scenario: articles as a list on the administration dashboard if they exist
+	  Given a user with login 'test' and password 'test'
+	  And user 'test' creates 3 random articles
+      When I log in with login 'test' and password 'test'
+	  And I visit /admin
+	  Then there should be a list with 3 articles
+	
+	Scenario: if there are no articles, don't display an article list
+	  Given a user with login 'test' and password 'test'
+	  When I log in with login 'test' and password 'test'
+	  And I visit /admin
+	  Then there should not be a list with articles
+	
+	Scenario: admin should have method to create article
+	  Given a valid user
+	  When I visit /admin
+	  And I click the 'Create Article' link
+	  Then the page should have text "Create Article"
+	  
+		

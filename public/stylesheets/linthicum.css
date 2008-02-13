@@ -1,0 +1,49 @@
+/* @override http://192.168.2.50/~bryan/linthicum/linthicum.css */
+
+body {
+	color:  #555;
+	font: .8em "Lucida Grande", Lucida, Verdana, sans-serif;
+	margin-left: 5em;
+	width: 850px;
+}
+
+/* @group header */
+
+div#header h1 a{
+	color: #333;
+	font: bold 1.2em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+}
+
+/* @end */
+
+
+/* @group content */
+div#content {
+	width:  550px;	
+}
+
+.article a:link, .article a:visited  {
+	color: #222;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.article a:hover{
+	color: #5072ff;
+	text-decoration: none;
+	font-weight: bold;
+
+}
+
+/* @end */
+
+/* @group footer */
+
+div#footer {
+	margin-top: 2em;
+	color:  #999;
+	font:  .7em "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+/* @end */

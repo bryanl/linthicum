@@ -1,0 +1,12 @@
+<% if @articles.empty? %>
+There are no articles
+<% else %>
+<h2>Articles</h2>
+<div id="articles">
+	<% @articles.each do |article| %>
+	<li><%= article.title %></li>
+	<% end %>
+</div>
+<% end %>
+
+<p><%= link_to "Create Article", new_admin_article_path %></p>
